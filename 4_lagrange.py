@@ -71,25 +71,19 @@ while i**2 <= input_number:
     if i**2 == input_number:
         count_result += 1
         break
-    save_1 = i**2
     j = i
-    while save_1 + j**2 <= input_number:
-        if save_1 + j**2 == input_number:
+    while i**2 + j**2 <= input_number:
+        if i**2 + j**2 == input_number:
             count_result += 1
             break
-        save_2 = save_1 + j**2
         k = j
-        while save_2 + k**2 <= input_number:
-            if save_2 + k**2 == input_number:
+        while i**2 + j**2 + k**2 <= input_number:
+            if i**2 + j**2 + k**2 == input_number:
                 count_result += 1
                 break
-            save_3 = save_2 + k**2
-            l = k
-            while save_3 + l**2 <= input_number:
-                if save_3 + l**2 == input_number:
-                    count_result += 1
-                    break
-                l += 1
+            temp = (input_number - (i**2 + j**2 + k**2)) ** 0.5
+            if temp.is_integer() and temp >= k:
+                count_result += 1
             k += 1
         j += 1
     i += 1
