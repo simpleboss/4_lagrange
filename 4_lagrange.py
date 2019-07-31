@@ -71,17 +71,17 @@ while i**2 <= input_number:
     if i**2 == input_number:
         count_result += 1
         break
-    j = i
+    j = i + 1
     while i**2 + j**2 <= input_number:
         if i**2 + j**2 == input_number:
             count_result += 1
             break
-        k = j
+        k = j + 1
         while i**2 + j**2 + k**2 <= input_number:
             if i**2 + j**2 + k**2 == input_number:
                 count_result += 1
                 break
-            l = k
+            l = k + 1
             while i**2 + j**2 + k**2 + l**2 <= input_number:
                 if i**2 + j**2 + k**2 + l**2 == input_number:
                     count_result += 1
