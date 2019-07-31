@@ -66,25 +66,30 @@
 input_number = int(input())
 
 count_result = 0
-for i in range(1, input_number+1):
-    print("i=", i)
+i = 1
+while i**2 <= input_number:
     if i**2 == input_number:
         count_result += 1
         break
-    for j in range(i, input_number+1):
+    j = i
+    while i**2 + j**2 <= input_number:
         if i**2 + j**2 == input_number:
             count_result += 1
             break
-        for k in range(j, input_number+1):
+        k = j
+        while i**2 + j**2 + k**2 <= input_number:
             if i**2 + j**2 + k**2 == input_number:
                 count_result += 1
                 break
-            for l in range(k, input_number+1):
+            l = k
+            while i**2 + j**2 + k**2 + l**2 <= input_number:
                 if i**2 + j**2 + k**2 + l**2 == input_number:
                     count_result += 1
                     break
-                print("loading")
+                l += 1
+            k += 1
+        j += 1
+    i += 1
 
-print("finish")
 print(count_result)
 
